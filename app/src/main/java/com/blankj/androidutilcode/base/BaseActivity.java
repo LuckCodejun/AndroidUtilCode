@@ -12,22 +12,19 @@ import android.view.View;
  *     author: Blankj
  *     blog  : http://blankj.com
  *     time  : 2016/10/24
- *     desc  : Activity 基类
+ *     desc  : base about activity
  * </pre>
  */
 public abstract class BaseActivity extends AppCompatActivity
         implements IBaseView {
 
-    /**
-     * 当前 Activity 渲染的视图 View
-     */
-    protected View contentView;
+    protected View     mContentView;
+    protected Activity mActivity;
+
     /**
      * 上次点击时间
      */
     private long lastClick = 0;
-
-    protected Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +33,13 @@ public abstract class BaseActivity extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         initData(bundle);
         setBaseView(bindLayout());
-        initView(savedInstanceState, contentView);
+        initView(savedInstanceState, mContentView);
         doBusiness();
     }
 
     protected void setBaseView(@LayoutRes int layoutId) {
         if (layoutId <= 0) return;
-        setContentView(contentView = LayoutInflater.from(this).inflate(layoutId, null));
+        setContentView(mContentView = LayoutInflater.from(this).inflate(layoutId, null));
     }
 
     /**

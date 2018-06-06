@@ -2,6 +2,7 @@ package com.blankj.androidutilcode.feature.core.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,7 +18,7 @@ import java.util.Random;
  *     author: Blankj
  *     blog  : http://blankj.com
  *     time  : 17/02/02
- *     desc  :
+ *     desc  : demo about FragmentUtils
  * </pre>
  */
 public class ChildFragment extends BaseFragment
@@ -33,7 +34,7 @@ public class ChildFragment extends BaseFragment
     }
 
     @Override
-    public void initData(Bundle bundle) {
+    public void initData(@Nullable Bundle bundle) {
 
     }
 
